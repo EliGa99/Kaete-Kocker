@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In liebevoller Erinnerung an Käte Kocker</title>
+    <style>
+        :root {
+            --primary-color: #f4f1ea;
+            --accent-color: #7d8e7b;
+            --text-color: #333;
+            --font-serif: 'Georgia', serif;
+            --candle-gold: #ffcc00;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .header-content h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        .intro {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            font-family: var(--font-serif);
+            font-weight: normal;
+            color: var(--accent-color);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Stammbaum Design */
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .tree-level {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .tree-member {
+            background: #fdfdfd;
+            border: 1px solid #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.02);
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .tree-member.main {
+            background: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Gedenkkerze */
+        .candle-section {
+            text-align: center;
+            background: #fafaf8;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .candle {
+            width: 40px;
+            height: 60px;
+            background: #eee;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .flame {
+            display: none;
+            width: 15px;
+            height: 25px;
+            background: var(--candle-gold);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px var(--candle-gold);
+            animation: flicker 1s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+            100% { transform: translateX(-52%) scale(1.1); opacity: 1; }
+        }
+
+        .btn-candle {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: var(--font-serif);
+            transition: 0.3s;
+        }
+
+        .btn-candle:hover { background: #6a7a68; }
+
+        /* Galerie & Zitat */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .gallery img {
+            width: 100%; height: 220px;
+            object-fit: cover; border-radius: 4px;
+        }
+
+        .quote-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            margin: 40px 0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            .header-content h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Käte Kocker</h1>
+            <p>* 25.06.1940  &nbsp;† 22.02.2026</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            "Was man in seinem Herzen besitzt, kann man durch den Tod nicht verlieren."
+        </div>
+
+        <section class="content-section">
+            <h2>Käte in 7 Worten</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0;">
+                <span class="tree-member">Liebevoll</span>
+                <span class="tree-member">Warmherzig</span>
+                <span class="tree-member">Bescheiden</span>
+                <span class="tree-member">Ruhig</span>
+                <span class="tree-member">Familiär</span>
+                <span class="tree-member">Schlau</span>
+                <span class="tree-member">Kreativ</span>
+            </div>
+        </section>
+
+        
+
+        <section class="content-section">
+            <h2>Momente, die bleiben</h2>
+            <div class="gallery">
+                <img src="Oma-1.jpeg" alt="Bild 1">
+                <img src="Oma-2.jpeg" alt="Bild 2">
+                <img src="Oma-3.jpeg" alt="Bild 3">
+                <img src="Oma-4.jpeg" alt="Bild 4">
+                <img src="Oma-5.jpeg" alt="Bild 5">
+                <img src="Oma-6.jpeg" alt="Bild 6">
+            </div>
+        </section>
+
+        <section class="candle-section">
+            <h2>Ein Licht für Käte</h2>
+            <p>Zünde eine virtuelle Kerze an, um an sie zu erinnern.</p>
+            <div class="candle">
+                <div class="flame" id="candleFlame"></div>
+            </div>
+            <button class="btn-candle" onclick="lightCandle()">Kerze anzünden</button>
+            <p id="candleCount" style="margin-top: 15px; font-size: 0.9rem; color: #666;"></p>
+        </section>
+
+        <div class="quote-box">
+            "Von guten Mächten wunderbar geborgen, erwarten wir getrost, was kommen mag. <br>
+            Gott ist mit uns am Abend und am Morgen und ganz gewiss an jedem neuen Tag."
+        </div>
+    </div>
+
+    <footer>
+        In ewiger Dankbarkeit und Liebe. <br>
+        Diese Seite wurde erstellt von der Familie Gallathe.
+    </footer>
+
+    <script>
+        function lightCandle() {
+            const flame = document.getElementById('candleFlame');
+            flame.style.display = 'block';
+            const countText = document.getElementById('candleCount');
+            countText.innerText = "Ein Licht brennt in stillem Gedenken.";
+        }
+    </script>
+</body>
+</html>
