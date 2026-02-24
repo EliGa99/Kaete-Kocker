@@ -228,6 +228,11 @@
                 <img src="Oma-4.jpeg" alt="Bild 4">
                 <img src="Oma-5.jpeg" alt="Bild 5">
                 <img src="Oma-6.jpeg" alt="Bild 6">
+                <p style="text-align: center; margin-top: 8px;">
+        <a href="gallery.html" style="font-style: italic; font-size: 0.85rem; color: #7d8e7b; text-decoration: none;">
+            Schaue in Kätes Gallerie...
+        </a>
+    </p>
             </div>
         </section>
 
@@ -260,5 +265,10 @@
             countText.innerText = "Ein Licht brennt in stillem Gedenken.";
         }
     </script>
+    <script>
+    if (sessionStorage.getItem('zugriff') !== 'true') {
+        window.location.href = "login.html";
+    }
+</script>
 </body>
 </html>

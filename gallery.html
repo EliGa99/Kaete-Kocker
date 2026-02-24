@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogalerie - Käte Kocker</title>
+    <style>
+        :root {
+            --primary-color: #f4f1ea;
+            --accent-color: #7d8e7b;
+            --text-color: #333;
+            --font-serif: 'Georgia', serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        /* Navigation */
+        .nav-bar {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: var(--accent-color);
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-weight: 300;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+
+        /* Masonry Galerie Layout */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            column-count: 3; /* Anzahl der Spalten */
+            column-gap: 20px;
+        }
+
+        .gallery-item {
+            margin-bottom: 20px;
+            break-inside: avoid;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            display: block;
+        }
+
+        .gallery-item p {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #666;
+            margin: 10px 0 5px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive für Handys */
+        @media (max-width: 900px) {
+            .gallery-container { column-count: 2; }
+        }
+        @media (max-width: 600px) {
+            .gallery-container { column-count: 1; }
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <a href="index.html">Startseite</a>
+        <a href="gallery.html" style="border-bottom: 2px solid var(--accent-color);">Galerie</a>
+    </nav>
+
+    <header>
+        <h1>Bilder, die wir im Herzen tragen</h1>
+        <p>Ein Blick zurück auf ein erfülltes Leben.</p>
+    </header>
+
+    <div class="gallery-container">
+        
+        <div class="gallery-item">
+            <img src="Oma-1.jpeg" alt="Erinnerung">
+            <p>Ein Herz für die Ewigkeit</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-2.jpeg" alt="Erinnerung">
+            <p></p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-3.jpeg" alt="Erinnerung">
+            <p style="text-align: center; font-family: var(--font-serif); margin-top: 20px;">
+    Käte Kocker mit ihrem Ehemann 
+    <a href="Jürgen-Kocker.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--accent-color); padding-bottom: 2px;">
+        Jürgen Kocker
+    </a>
+</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-4.jpeg" alt="Erinnerung">
+            <p>Im Krankenhaus</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-5.jpeg" alt="Erinnerung">
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-6.jpeg" alt="Erinnerung">
+            <p>Lecker</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-7.jpeg" alt="Erinnerung">
+            <p>Ein Treffen mit Enkel Elias</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-8.jpeg" alt="Erinnerung">
+            <p>Ein toller Moment mit Tochter Anja</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-9.jpeg" alt="Erinnerung">
+            <p>Ein Geschenk von Enkel Milena</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="Oma-10.jpeg" alt="Erinnerung">
+        </div>
+
+    </div>
+
+    <script>
+    if (sessionStorage.getItem('zugriff') !== 'true') {
+        window.location.href = "login.html";
+    }
+</script>
+
+    <footer>
+        In liebevoller Erinnerung an Käte Kocker (1940 – 2026)
+    </footer>
+
+</body>
+</html>

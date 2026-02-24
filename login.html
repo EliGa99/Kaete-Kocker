@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zugang geschützt - Käte Kocker</title>
+    <style>
+        body {
+            background-color: #f4f1ea;
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 { color: #7d8e7b; font-weight: normal; }
+        p { color: #666; font-size: 0.9rem; line-height: 1.5; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #7d8e7b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #6a7a68; }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Privater Gedenkbereich</h2>
+    <p>Um die Privatsphäre unserer Familie und die persönlichen Fotos von Käte zu schützen, ist dieser Bereich passwortgeschützt.</p>
+    <input type="password" id="pw" placeholder="Passwort eingeben...">
+    <button onclick="check()">Einloggen</button>
+</div>
+
+<script>
+    function check() {
+        const p = document.getElementById('pw').value;
+        if(p === "290171") {
+            sessionStorage.setItem('zugriff', 'true');
+            window.location.href = "index.html";
+        } else {
+            window.location.href = "false-id.html";
+        }
+    }
+</script>
+
+</body>
+</html>
