@@ -82,6 +82,13 @@
             display: block;
         }
 
+        .gallery-item video {
+            width: 100%;
+            height: auto;
+            border-radius: 2px;
+            display: block;
+        }
+
         .gallery-item p {
             font-size: 0.85rem;
             font-style: italic;
@@ -139,11 +146,11 @@
         <div class="gallery-item">
             <img src="Oma-4.jpeg" alt="Erinnerung">
             <p style="text-align: center; font-family: var(--font-serif); margin-top: 20px;">
-    Käte Kocker mit ihrem Ehemann 
-    <a href="Jürgen-Kocker.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--accent-color); padding-bottom: 2px;">
-        Jürgen Kocker
-    </a>
-</p>
+                Käte Kocker mit ihrem Ehemann 
+                <a href="Jürgen-Kocker.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--accent-color); padding-bottom: 2px;">
+                    Jürgen Kocker
+                </a>
+            </p>
         </div>
 
         <div class="gallery-item">
@@ -174,13 +181,22 @@
             <img src="Oma-10.jpeg" alt="Erinnerung">
         </div>
 
+        <!-- Video-Feld -->
+        <div class="gallery-item">
+            <video controls>
+                <source src="Erinnerung-Video.mp4" type="video/mp4">
+                Dein Browser unterstützt das Video-Tag nicht.
+            </video>
+            <p>Ein besonderer Moment in bewegten Bildern</p>
+        </div>
+
     </div>
 
     <script>
-    if (sessionStorage.getItem('zugriff') !== 'true') {
-        window.location.href = "login.html";
-    }
-</script>
+        if (sessionStorage.getItem('zugriff') !== 'true') {
+            window.location.href = "login.html";
+        }
+    </script>
 
     <footer>
         In liebevoller Erinnerung an Käte Kocker (1940 – 2026)
